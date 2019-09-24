@@ -9,4 +9,8 @@ module.exports = (app) => {
         response.send("Just another route to test the initial set up");
     });
 
+    app.get('/api/hello', (request, response) => {
+        response.send("If you clicked message on front-end -> you should get this message ;)");
+    });
+
 }
