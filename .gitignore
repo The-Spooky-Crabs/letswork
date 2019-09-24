@@ -5,6 +5,9 @@ server/client/node_modules
 #coverage
 server/client/coverage
 
+#keys
+server/config/keys.js
+
 #misc
 server/client/.DS_Store
 server/client/.env.local 
