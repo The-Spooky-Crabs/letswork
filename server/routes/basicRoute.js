@@ -13,4 +13,7 @@ module.exports = (app) => {
         response.send("If you clicked message on front-end -> you should get this message ;)");
     });
 
+    app.post('/api/project', (request, response) => {
+        response.send("From Server: \n" + request);
+    });
 }
