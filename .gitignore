@@ -6,7 +6,7 @@ server/client/node_modules
 server/client/coverage
 
 #keys
-server/config/keys.js
+server/config/devKeys.js
 
 #misc
 server/client/.DS_Store
