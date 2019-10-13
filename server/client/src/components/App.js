@@ -1,22 +1,35 @@
+import React, { Component } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions/index';
+
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import Header from './header/Header';
+import Dashboard from './dashboard/Dashboard';
+import AddProject from './dashboard/project/AddProject';
 
-import Dashboard from './Dashboard';
-import Header from './layout/Header';
-import AddProject from "./project/AddProject";
+class App extends Component {
 
-const App = () => {
-    return (
-        <Router>
-            <div className="App">
-                <Header />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/addProject" component={AddProject} />
+    //as soon this component did mount - do logic inside
+    componentDidMount(){
+        this.props.fetchUser();
+    }
+
+    render() {
+        return (
+            <div>
+                <BrowserRouter>
+                    <div>
+                        <Header />
+                        <Route exact path="/dashboard" component={Dashboard} />
+                        <Route exact path="/addProject" component={AddProject} />
+                    </div>
+                </BrowserRouter>
             </div>
-        </Router>
-    );
-};
-
-export default App;
+        )
+    }
+}
+//rcc - generate class-based component
+//rfc - generate function-based component
+export default connect(null, actions)(App);

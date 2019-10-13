@@ -5,15 +5,4 @@ module.exports = (app) => {
         response.send("Server is UP! WOOOOHOOOO!");
     });
 
-    app.get('/hello', (request, response) => {
-        response.send("Just another route to test the initial set up");
-    });
-
-    app.get('/api/hello', (request, response) => {
-        response.send("If you clicked message on front-end -> you should get this message ;)");
-    });
-
-    app.post('/api/project', (request, response) => {
-        response.send("From Server: \n" + request);
-    });
 }
