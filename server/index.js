@@ -53,3 +53,7 @@ require('./routes/oauthRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
+
+
+//sudo lsof -i tcp:5000 
+//kill -9 {PID}
